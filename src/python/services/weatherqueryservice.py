@@ -1,7 +1,8 @@
 import json
 import requests
 import datetime
-from weatherpy2.src.python.model import weatherreport
+from src.python.model import weatherreport
+
 
 class WeatherReport(object):
 
@@ -14,7 +15,7 @@ class WeatherQueryService:
     def __init__(self):
 
         # Read the open weather api info from the secrets json
-        with open('../../data/config/weather_secret.json') as json_file:
+        with open('data/config/weather_secrets.json') as json_file:
             config = json.load(json_file)
 
             api_key = config['apikey']

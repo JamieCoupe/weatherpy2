@@ -1,11 +1,11 @@
 from flask import Flask, render_template, g, redirect, url_for
 from flask_oidc import OpenIDConnect
 from okta import UsersClient
-from weatherpy2.src.python.services import weatherqueryservice
+from src.python.services import weatherqueryservice
 
 
-app = Flask(__name__, template_folder='../../web/templates')
-app.config["OIDC_CLIENT_SECRETS"] = "../../data/config/client_secrets.json"
+app = Flask(__name__, template_folder='/Users/jamiecoupe/PycharmProjects/weatherpy2/web/templates')
+app.config["OIDC_CLIENT_SECRETS"] = "./data/config/client_secrets.json"
 app.config["OIDC_COOKIE_SECURE"] = False
 app.config["OIDC_CALLBACK_ROUTE"] = "/oidc/callback"
 app.config["OIDC_SCOPES"] = ["openid", "email", "profile"]
