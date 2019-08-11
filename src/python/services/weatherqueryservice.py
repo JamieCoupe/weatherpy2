@@ -33,7 +33,6 @@ class WeatherQueryService:
         if response.status_code == 200:
             openweatherreport = json.loads(response.text)
 
-            print(openweatherreport.get("weather", "This attribute doesnt exist"))
             # Parse the results and create new object
 
             timestamp = datetime.datetime.fromtimestamp(int(openweatherreport['dt'])).strftime('%H:%M - %A, %d of %B ')
