@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}Hourly{% endblock %}
+
+{% block body %}
+  <h1 class="text-center">Hourly</h1>
+  <div class="row">
+    <div class="col-sm-12 offset-sm-0">
+      <p class="text-center">Welcome to the hourly weather conditions, {{ g.user.profile.firstName }}!</p>
+
+      <p>{{ g.weather }}</p>
+
+      <table>
+        <tr>
+          <th>Type</th>
+          <th>+1</th>
+          <th>+2</th>
+          <th>+3</th>
+          <th>+4</th>
+          <th>+5</th>
+          <th>+6</th>
+          <th>+7</th>
+          <th>+8</th>
+          <th>+9</th>
+          <th>+10</th>
+        </tr>
+        <tr>
+        </tr>
+
+      </table>
+
+      <hr/>
+      <h2>Weather</h2>
+      <p> </p>
+      <hr/>
+      <h2>Temperature</h2>
+      <table>
+        <tr>
+          <td>Current</td>
+        </tr>
+        <tr>
+          <td>Minimum</td>
+        </tr>
+        <tr>
+          <td>Maximum</td>
+        </tr>
+      </table>
+      <hr/>
+      <h2>Wind</h2>
+      <hr/>
+      <h2>Time</h2>
+      <hr/>
+      <h2>Other</h2>
+      <hr/>
+    </div>
+  </div>
+{% endblock %}

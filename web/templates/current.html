@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}Current{% endblock %}
+
+{% block body %}
+  <h1 class="text-center">Current</h1>
+  <div class="row">
+    <div class="col-sm-12 offset-sm-0">
+      <p class="text-center">Welcome to the current weather conditions, {{ g.user.profile.firstName }}!</p>
+      <p>The weather in {{ g.weather.location }} at {{ g.weather.timestamp }}:</p>
+      <hr/>
+      <div>
+        <h2>Weather</h2>
+        <p> {{ g.weather.weather["weather"] }}, {{ g.weather.weather["description"] }}</p>
+        <p> </p>
+      </div>
+      <hr/>
+      <div>
+        <h2>Temperature</h2>
+        <table>
+          <tr>
+            <td>Maximum</td>
+            <td>{{ g.weather.temperature["max"]}}C</td>
+          </tr>
+          <tr>
+            <td>Current</td>
+            <td>{{ g.weather.temperature["current"] }}C</td>
+          </tr>
+          <tr>
+            <td>Minimum</td>
+            <td>{{ g.weather.temperature["min"] }}C</td>
+          </tr>
+        </table>
+      </div>
+      <hr/>
+      <div>
+        <h2>Wind</h2>
+        <p>The weather is {{ g.weather.wind["speed"] }}m/s from {{ g.weather.wind["direction"] }} degrees</p>
+      </div>
+      <hr/>
+      <div>
+        <h2>Time</h2>
+        <p>Sunrise is at: {{ g.weather.time["sunrise"] }}</p>
+        <p>Sunset is at: {{ g.weather.time["sunset"] }}</p>
+      </div>
+      <hr/>
+      <div>
+        <h2>Other</h2>
+        <p>Pressure: {{ g.weather.other["pressure"] }}hPa</p>
+        <p>Humidity: {{ g.weather.other["humidity"] }}%</p>
+      </div>
+      <hr/>
+    </div>
+  </div>
+{% endblock %}
